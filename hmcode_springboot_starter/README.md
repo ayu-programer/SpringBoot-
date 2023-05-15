@@ -11,8 +11,9 @@ hmcode-springboot-starter
     路由策略得具体逻辑是
 		通过配置文件中所定义得库 表数量 获取乘积
 		再基于hashmap得扰动函数得实现思路，进一步求出库表索引
-		并将库表索引设置到Theadlocal中去
+		并将``库表索引设置到Theadlocal中去
 		
+	```
 	@Override
     public void doRouter(String dbKeyAttr) {
         int size = dbRouterConfig.getDbCount() * dbRouterConfig.getTbCount();
@@ -29,7 +30,7 @@ hmcode-springboot-starter
         DBContextHolder.setTBKey(String.format("%03d", tbIdx));
         logger.debug("数据库路由 dbIdx：{} tbIdx：{}", dbIdx, tbIdx);
     }
-	
+	```
 	
 而接下来就是需要向数据集里写东西，--就是会通过mybatis拦截器得任务来完成
 而这里得实现思路是通过实现Interceptor接口（Interceptor接口是mybatis拦截器得核心接口）
