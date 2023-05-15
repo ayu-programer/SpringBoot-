@@ -43,4 +43,3 @@ intercept方法是拦截器得核心方法，当拦截条件满足时会执行�
 	3 如果需要进行分表操作，就通过statementHandler 获取BoundSql对象，并从中提取出sql语句，
 	4 然后使用表名匹配规则从sql中提取出表名，并根据当前分表策略进行替换，
 	最后通过反射将替换后得sql语句赋值回给BoundSql对象中得sql字段
-https://t.zsxq.com/0eMMC9jqQ
